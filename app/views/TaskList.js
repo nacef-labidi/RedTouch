@@ -14,10 +14,24 @@ redtouch.views.TaskList = Ext.extend(Ext.Panel, {
     }],
     dockedItems: [{
         xtype: 'toolbar',
-        title: 'Test'
+        title: 'Test',
+        items: [
+            {
+                text: 'Back',
+                ui: 'back',
+                listeners: {
+                    'tap': function () {
+                        Ext.dispatch({
+                            controller: redtouch.controllers.main,
+                            action: 'projects',
+                            animation: {type:'slide', direction:'right'}
+                        });
+                    }
+                }
+            }
+        ]
     }],
     initComponent: function() {
-        redtouch.stores.tasks.load();
         redtouch.views.TaskList.superclass.initComponent.apply(this, arguments);
     }
 });

@@ -1,0 +1,38 @@
+redtouch.models.Task = Ext.regModel("redtouch.models.Task", {
+    fields: [
+        {name: 'id', type: 'int'},
+        {name: 'subject', type:'string'},
+        {name: 'description', type:'string'},
+        {name: 'start_date', type:'string'},
+        {name: 'due_date', type:'string'},
+        {name: 'done_ratio', type:'string'},
+        {name: 'estimated_hours', type:'string'},
+        {name: 'created_on', type:'string'},
+        {name: 'updated_on', type:'string'},
+        {name: 'tracker', type:'string', convert: function(v, record) {
+            return v.name;
+        }},
+        {name: 'project', type:'string', convert: function(v, record) {
+            return v.name;
+        }},
+        {name: 'status', type:'string', convert: function(v, record) {
+            return v.name;
+        }},
+        {name: 'priority', type:'string', convert: function(v, record) {
+            return v.name;
+        }},
+        {name: 'author', type:'string', convert: function(v, record) {
+            return v.name;
+        }},
+        {name: 'assigned_to', type:'string', convert: function(v, record) {
+            return v.name;
+        }}
+    ],
+
+    proxy: redtouch.proxies.tasks
+});
+
+redtouch.stores.tasks = new Ext.data.Store({
+    model: "redtouch.models.Task",
+    remoteFilter: true
+});

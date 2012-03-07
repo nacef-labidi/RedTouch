@@ -12,7 +12,7 @@ redtouch.views.ProjectList = Ext.extend(Ext.Panel, {
         listeners: {
             itemtap: function(dv, index, item, e) {
                 Ext.dispatch({
-                    controller: redtouch.controllers.projects,
+                    controller: redtouch.controllers.main,
                     action: 'tasks',
                     id: dv.store.getAt(index).getId()
                 });
@@ -24,7 +24,6 @@ redtouch.views.ProjectList = Ext.extend(Ext.Panel, {
         title: 'RedTouch'
     }],
     initComponent: function() {
-        redtouch.stores.projects.load();
         redtouch.views.ProjectList.superclass.initComponent.apply(this, arguments);
     }
 });
