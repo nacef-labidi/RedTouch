@@ -8,6 +8,9 @@ Ext.define('Redtouch.controller.Project', {
         control: {
             'projectlist': {
                 disclose: 'listIssues'
+            },
+            'issuelist': {
+                disclose: 'issueDetails'
             }
         }
     },
@@ -19,7 +22,15 @@ Ext.define('Redtouch.controller.Project', {
 
         this.getMain().push({
             xtype: 'issuelist',
-            title: 'Issues'
+            title: record.data.name + ' Issues'
+        });
+    },
+
+    issueDetails: function(list, record) {
+        this.getMain().push({
+            xtype: 'issuedetails',
+            title: 'Issue #' + record.data.id,
+            data: record.getData()
         });
     }
     
