@@ -8,7 +8,7 @@ Ext.define('Redtouch.view.IssueList', {
         title: 'Issues',
         store: 'Issues',
         itemTpl: '#{id} {tracker} {subject}, {status}',
-        onItemDisclosure: true
+        onItemDisclosure: true,
         grouped: true
     }
 });
