@@ -7,6 +7,7 @@ Ext.define('Redtouch.model.Issue', {
             {name: 'created_on', type: 'auto'},
             {name: 'done_ratio', type: 'auto'},
             {name: 'start_date', type: 'auto'},
+            {name: 'due_date', type: 'auto'},
             {name: 'description', type: 'auto'},
             {name: 'subject', type: 'auto'},
             {name: 'updated_on', type: 'auto'},
@@ -38,6 +39,14 @@ Ext.define('Redtouch.model.Issue', {
                 name: 'priority',
                 convert: function(value, record) {
                     return value['name'];
+                }
+            },
+            {
+                name: 'assigned_to',
+                convert: function(value, record) {
+					if (value != null)
+						return value['name'];
+					return null;
                 }
             }
         ],
