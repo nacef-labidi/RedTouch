@@ -17,3 +17,13 @@
 @include sencha-msgbox;
 
 // Your custom code goes here...
+.issue .id {
+  float: left;
+  border-right: 1px solid #808080;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+p.tracker {
+  font-size: 12px;
+}

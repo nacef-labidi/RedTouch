@@ -10,5 +10,5 @@ css_path = File.join(dir, "..", "css")
 
 # Require any additional compass plugins here.
 images_dir = File.join(dir, "..", "images")
-output_style = :compressed
+output_style = :expanded
 environment = :production
